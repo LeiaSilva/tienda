@@ -190,3 +190,71 @@ header img{
     padding: 0.1rem;
 
 }
+/*---VENTANA MODAL---*/
+.modal-container{
+    z-index: 1000;
+    background-color: #c6d9ee;
+    width: 50%;
+    border-radius:20px;
+    position: relative;
+    left: 53rem;
+    bottom: 215rem;
+}
+.modalHeader{
+    width: 50%;
+    display: block;
+}
+.modalHeader h1{
+    font-size: 2.5rem;
+    font-family: 'Nanum Pen Script', cursive;
+    position: relative;
+    left: 15rem;
+    top: 2rem;
+}
+.modalButton{
+    width: 7%;
+    position: relative;
+    bottom: 4.5rem;
+    left: 49.6rem;
+    margin: .4rem;
+}
+.modal-content{
+    position: relative;
+    left: 2.8rem;
+    margin-bottom: 1rem;
+    background-color: #ffffff;
+    width: 90%;
+    height: 10rem;
+    border-radius: 10px;
+    
+}
+.modal-content img{
+    width: 30%;
+    position: relative;
+    left: 1rem;
+    
+}
+.modal-content h3{
+    position: absolute;
+    left: 22rem;
+    bottom: 5rem;
+    font-size: 2rem;
+}
+.modal-content p{
+    position: absolute;
+    left: 20rem;
+    bottom: 3.5rem;
+    font-size: 1.3rem;
+}
+.precio-modal{
+    position: absolute;
+    right:.5rem;
+    top: 5.5rem;
+    font-size: 2rem;
+}
+.totalFooter{
+    font-family: 'Nanum Pen Script', cursive;
+    text-align: center;
+    font-size: 2rem;
+    padding: 15px;
+}

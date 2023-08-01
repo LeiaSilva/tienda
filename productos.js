@@ -10,7 +10,7 @@ const productos = [
     {
       "id" : 2 ,
       "nombre" : "Galletas vainilla chocotip" ,
-      "descripción" : "Caja de 20 unidades de galletas de vainilla y chispas de chocolate",
+      "descripción" : "Caja de 20 unidades de galletas de vainilla y chocotip",
       "stock" : 20 , 
       "precio": 600 ,
       "img" : "./assets/Imagenes/productosDefault.jpg",
@@ -99,7 +99,7 @@ verCarrito.addEventListener("click" , () =>{
       <img src="${product.img}">
       <h3>${product.nombre}</h3>
       <p>${product.descripción}</p>
-      <p>${product.precio} $</p>
+      <p class="precio-modal">${product.precio} $</p>
     `;
     modalContainer.append(carritoContent);
   });
