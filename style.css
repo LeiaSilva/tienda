@@ -1,0 +1,192 @@
+
+html{
+    margin:0;
+    padding: 0;
+    overflow-x: hidden;
+}
+body{    
+    background: url(../assets/cookies-background.png);
+    background-color:#d8eaf1 ;
+}
+body img{
+    
+        width: 100%;
+    
+}
+/*---NAVBAR--*/
+header{
+    position: fixed;
+    top: 1.5rem; left: 8rem; right: 8rem;
+    background-color: #ffffff;
+    padding: 0.2rem 1%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 15rem;
+}  
+header img{
+        width: 10%;
+        position: relative;
+        left: 2rem;
+        bottom: 5px;
+}
+
+    #toggler{
+        display: none;
+    }
+    .fa-bars{
+        font-size: 6rem;
+        color: #4b4a4a;
+        border-radius: .5rem;
+        cursor: pointer;
+        display: none;
+    }
+        .navbar li{
+            position: relative;
+            right: 2rem;
+            bottom: 0rem;
+            font-size: 20px;
+            padding: 0 0 0 0rem;
+            color: #0f0f0f;
+            display: inline-block;
+            padding: 25px 30px 25px;
+        }
+            li{
+                list-style-type: none;
+                font-family: 'Nanum Pen Script', cursive;
+            }
+            a{
+                text-decoration: none;
+                color: #0f0f0f;
+            }
+            a:hover{
+                color: #D0EBD4 ; 
+            }
+        .icons a{
+            font-size: 1.5rem;
+            color: #0f0f0f;
+            margin-left: 1.5rem;
+            position: relative;
+            bottom: 0rem;
+            right: 5rem;
+        }
+        .icons a:hover{
+            color: #D0EBD4;
+        }
+/*---FOOTER--*/
+        footer{
+            position: relative;
+            top: 13rem;
+            width: 100%;
+            background-color: #f7e3ca;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 10rem;
+            .footer__title{
+                position: relative;
+                top: 1rem;
+                padding: 0.5rem;
+                font-size: 2rem;
+            }
+            .footer__container{
+                height: 50px;
+                width: 50px;
+                border-radius: 50px;
+                background-position: center;
+                background-size: 40%;
+                background-repeat: no-repeat;
+                margin: 1rem;
+                display: flex;
+            }
+                .footer__links{
+                    position: relative;
+                    left: -2.5rem;
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    margin: 0rem;
+                    padding: 0.2rem;
+                }
+        .copy{
+            text-align: center;
+            opacity: 50%;
+            font-size: 1rem;
+            position: relative;
+            left: -1rem;
+        }
+        .footer__logo{
+            width: 10rem;
+            position: absolute;
+            left: 72rem;
+        }
+        }
+/*---SHOP CONTENT*/
+.shopContentStyle{
+     margin-top: 14rem ;
+     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+}
+.card{
+    background-color: #ffffff;
+    margin: 1rem;
+    width: 60%;
+    height: 40rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+
+}
+.card img{
+    position: relative;
+    left: 15rem;
+    width: 50%;
+    margin: 1rem;
+}
+.card h3{
+    color:#000000;
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 3.5rem;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.card p{
+    color:#000000;
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.card .precio{
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 3rem;
+    padding: 0;
+    margin: 0;
+}
+.card .AgregarAlCarrito{
+    position: relative;
+    left: 21rem;
+    top: .2rem;
+    width:35% ;
+    height: 4rem;
+    font-size: 1.5rem;
+    font-family: 'Nanum Pen Script', cursive;
+    border-radius: 20px;
+    border: 1px;
+    cursor: pointer;
+    background-color: rgb(223, 250, 215);
+    padding: 0;
+    transition: .3s; 
+
+}
+ .AgregarAlCarrito:hover{
+    background-color: #4b4a4a77;
+    transform: scale(1.1);
+    padding: 0.1rem;
+
+}
