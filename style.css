@@ -232,8 +232,9 @@ header img{
     width: 30%;
     position: relative;
     left: 1rem;
-    
+    cursor: pointer;
 }
+
 .modal-content h3{
     position: absolute;
     left: 22rem;

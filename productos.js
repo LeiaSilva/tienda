@@ -73,11 +73,15 @@ productos.forEach((product) =>{
       precio: product.precio,
     });
     console.log(carrito);
+    
   }
   );
+  
 });
 
 verCarrito.addEventListener("click" , () =>{
+  modalContainer.innerHTML=``;
+  modalContainer.style.display="bloc";
   const modalHeader = document.createElement("div");
   modalHeader.className = "modalHeader";
   modalHeader.innerHTML = `
@@ -91,6 +95,10 @@ verCarrito.addEventListener("click" , () =>{
   <img src="./assets/Imagenes/cancelar.png">
   `;
   modalHeader.append(modalButton);
+  
+  modalButton.addEventListener("click", () =>{
+    modalContainer.style.display= "none"
+  })
 
   carrito.forEach((product) =>{
     let carritoContent = document.createElement("div");
@@ -111,5 +119,6 @@ verCarrito.addEventListener("click" , () =>{
   totalFooter.innerHTML = `Total a pagar : ${total} $
   `;
   modalContainer.append(totalFooter);
+
   
 })
