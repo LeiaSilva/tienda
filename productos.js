@@ -74,13 +74,26 @@ productos.forEach((product) =>{
     });
     console.log(carrito);
     localStorage.setItem('carrito', JSON.stringify(carrito));
+    
+    const alerta = document.createElement("div");
+    alerta.innerText = "Agregaste un producto";
+    alerta.className ="alertaCarrito";
+    shopContent.append(alerta);
+    alerta.classList.add("active");
+
+    //Tiempo de la alerta
+    const tiempoVidaAlerta = 1000;
+    setTimeout(()=>{
+      alerta.remove() ;
+    }, tiempoVidaAlerta)
   }
   );
 });
 
 verCarrito.addEventListener("click" , () =>{
   modalContainer.innerHTML=``;
-  modalContainer.style.display="bloc";
+  modalContainer.style.display="block";
+  modalContainer.classList.add("active");
   const modalHeader = document.createElement("div");
   modalHeader.className = "modalHeader";
   modalHeader.innerHTML = `
@@ -97,6 +110,7 @@ verCarrito.addEventListener("click" , () =>{
   
   modalButton.addEventListener("click", () =>{
     modalContainer.style.display= "none"
+    modalContainer.classList.remove("active");
   })
   const carritoGuardado = JSON.parse(localStorage.getItem('carrito'));
 
@@ -125,7 +139,15 @@ verCarrito.addEventListener("click" , () =>{
   `;
   modalContainer.append(totalFooter);
 
-  
+  const btnComprar = document.createElement("button");
+  btnComprar.innerText ="Comprar";
+  btnComprar.className="btnCompra";
+
+  modalContainer.append(btnComprar);
+
+  btnComprar.addEventListener ("click", function(){
+   window.location.href = "compra.html" 
+})
 })
 
 //Local Storage
