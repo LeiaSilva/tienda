@@ -1,3 +1,4 @@
+
 const productos = [
     {
       "id": 1,
@@ -47,7 +48,7 @@ const shopContent = document.getElementById("shopContent");
 const verCarrito = document.getElementById("verCarrito");
 const modalContainer = document.getElementById("ventanaModal");
 
-
+//Cards
 productos.forEach((product) =>{
   let contenido = document.createElement("div");
   contenido.className = "card" ;
@@ -72,9 +73,13 @@ productos.forEach((product) =>{
       descripción: product.descripción,
       precio: product.precio,
     });
+    //mostrar contador del carrito(visiblle)
+    mostrarContadorCarrito()
+
     console.log(carrito);
     localStorage.setItem('carrito', JSON.stringify(carrito));
-    
+
+    //Alertas
     const alerta = document.createElement("div");
     alerta.innerText = "Agregaste un producto";
     alerta.className ="alertaCarrito";
@@ -89,7 +94,7 @@ productos.forEach((product) =>{
   }
   );
 });
-
+//Ventana modal (relefejar productos seleccionados)
 verCarrito.addEventListener("click" , () =>{
   modalContainer.innerHTML=``;
   modalContainer.style.display="block";
@@ -100,7 +105,7 @@ verCarrito.addEventListener("click" , () =>{
   <h1 class="modalTitle"> Carrito de compras </h1>
   `
   modalContainer.append(modalHeader);
-  
+  //cerrar ventana modal
   const modalButton = document.createElement("div");
   modalButton.className = "modalButton";
   modalButton.innerHTML = `
@@ -112,6 +117,7 @@ verCarrito.addEventListener("click" , () =>{
     modalContainer.style.display= "none"
     modalContainer.classList.remove("active");
   })
+  
   const carritoGuardado = JSON.parse(localStorage.getItem('carrito'));
 
   if (carritoGuardado && carritoGuardado.length > 0) {
@@ -155,4 +161,19 @@ function obtenerProductos() {
   const productosGuardados = JSON.parse(localStorage.getItem('productos'));
   return productosGuardados || productos;
 }
+function mostrarContadorCarrito() {
+  const contadorCarrito = document.getElementById("carritoContadorCantidad");
+  contadorCarrito.textContent = `(${carrito.length})`;
+  //mostrar
+  const mostrarContador = document.createElement("div");
+  mostrarContador.classList.add("active")
+  mostrarContador.innerText = carrito.length; 
+ 
 
+  // validaciones segun el carrito este vacio o no
+  if (carrito.length === 0) {
+    mostrarContador.style.display = 'none';
+  } else {
+    mostrarContador.style.display = 'block';
+  }
+}
