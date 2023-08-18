@@ -14,46 +14,54 @@
     <!--CONTENIDO -->
     <h2 class="titulosForm">Datos Personales</h2>
         <div class="containerForm">
-            <form action="">
-                <div>
+            <form action="" id="form">
+                <div id="containerInputs">
                     <label for="nombreApellido">Nombre y Apellido</label>
                     <input type="text" name="" id="nombreApellido">
+                    <p class="mensajeError"></p>
                 </div>
-                <div>
+                <div  id="containerInputs">
                     <label for="email">E-mail</label>
                     <input type="email" name="" id="email">
+                    <p class="mensajeError"></p>
                 </div>
-                <div>
+                <div  id="containerInputs">
                     <label for="number">Celular</label>
                     <input type="number" name="" id="number">
+                    <p class="mensajeError"></p>
                 </div>
             </form>
         </div>
         <h2 class="titulosForm">Entregas</h2>
-        <div class="containerForm">
+        <div class="containerForm"  id="containerInputs">
             <form action="">
                 <div>
                     <label for="calle">Calle</label>
                     <input type="text" name="" id="calle">
+                    <p class="mensajeError"></p>
                 </div>
-                <div>
+                <div  id="containerInputs">
                     <label for="nCalle">Número de calle</label>
                     <input type="number" name="" id="nCalle">
+                    <p class="mensajeError"></p>
                 </div>
                 <div>
                     <label for="localidad">Localidad</label>
                     <input type="text" name="" id="localidad">
+                    <p class="mensajeError"></p>
                 </div>
                 <h3>Opciones de Envío</h3>
                 <div class="enviosForm">
                     <label for="mosomensajeria">Motomensajeria</label>
                     <input type="checkbox" name="" id="motomensajeria">
                     <img src="./assets/Imagenes/moto.png" alt="Moto">
+                    <p class="mensajeError"></p>
                 </div>
                 <div class="enviosForm">
                     <label for="sucursal">Retiro por sucursal</label>
                     <input type="checkbox" name="" id="sucursal">
                     <img src="./assets/Imagenes/ubicacion.png" alt="ubicacion">
+                    <p class="mensajeError"></p>
                 </div>
             </form>
         </div> 
@@ -64,16 +72,19 @@
                     <label for="tarjetas">Tarjetas</label>
                     <input type="checkbox" name="" id="tarjetas">
                     <img src="./assets/Imagenes/visa.png">
+                    <p class="mensajeError"></p>
                 </div>
                 <div class="pagoForm">
                     <label for="mp">Mercado Pago</label>
                     <input type="checkbox" name="" id="mp">
                     <img src="./assets/Imagenes/mercadoPago.png">
+                    <p class="mensajeError"></p>
                 </div>
                 <div class="pagoForm">
                     <label for="efectivo">Efectivo</label>
                     <input type="checkbox" name="" id="efectivo">
                     <img src="./assets/Imagenes/efectivo.png">
+                    <p class="mensajeError"></p>
                 </div>
                 <div class="btnFinalizarCompra" >
                     <input type="submit" value="Finalizar Compra">
@@ -81,9 +92,9 @@
             </form>
         </div>
 
-
-
-</body>
 <script src="./formCompra.js"></script>
 <script src="./productos.js"></script>
+
+</body>
+
 </html>
