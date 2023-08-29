@@ -12,89 +12,106 @@
         <h1 class="mainTitleForm"> Entrega y Pago</h1>
         <hr>
     <!--CONTENIDO -->
-    <h2 class="titulosForm">Datos Personales</h2>
-        <div class="containerForm">
-            <form action="" id="form">
-                <div id="containerInputs">
-                    <label for="nombreApellido">Nombre y Apellido</label>
-                    <input type="text" name="" id="nombreApellido">
-                    <p class="mensajeError"></p>
-                </div>
-                <div  id="containerInputs">
-                    <label for="email">E-mail</label>
-                    <input type="email" name="" id="email">
-                    <p class="mensajeError"></p>
-                </div>
-                <div  id="containerInputs">
-                    <label for="number">Celular</label>
-                    <input type="number" name="" id="number">
-                    <p class="mensajeError"></p>
-                </div>
-            </form>
+    <form action="" class="formulario" id="formulario">
+        <h2>Datos Personales</h2>
+        <!--grupo 1: nombre y apellido-->
+        <div class="formulario__grupo  " id="grupo__nombreApellido">
+            <label for="nombre" class="formulario__label">Nombre y Apellido</label>
+            <div class="formulario__grupo-input">
+                <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Jhon Doe">
+                <ion-icon name="close-circle-outline" class="formulario__validacion-estado"></ion-icon>
+            </div>
+            <p class="formulario__input-error">El nombre y apellido tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
         </div>
-        <h2 class="titulosForm">Entregas</h2>
-        <div class="containerForm"  id="containerInputs">
-            <form action="">
-                <div>
-                    <label for="calle">Calle</label>
-                    <input type="text" name="" id="calle">
-                    <p class="mensajeError"></p>
-                </div>
-                <div  id="containerInputs">
-                    <label for="nCalle">Número de calle</label>
-                    <input type="number" name="" id="nCalle">
-                    <p class="mensajeError"></p>
-                </div>
-                <div>
-                    <label for="localidad">Localidad</label>
-                    <input type="text" name="" id="localidad">
-                    <p class="mensajeError"></p>
-                </div>
-                <h3>Opciones de Envío</h3>
-                <div class="enviosForm">
-                    <label for="mosomensajeria">Motomensajeria</label>
-                    <input type="checkbox" name="" id="motomensajeria">
-                    <img src="./assets/Imagenes/moto.png" alt="Moto">
-                    <p class="mensajeError"></p>
-                </div>
-                <div class="enviosForm">
-                    <label for="sucursal">Retiro por sucursal</label>
-                    <input type="checkbox" name="" id="sucursal">
-                    <img src="./assets/Imagenes/ubicacion.png" alt="ubicacion">
-                    <p class="mensajeError"></p>
-                </div>
-            </form>
-        </div> 
-        <h2 class="titulosForm">Pago</h2>
-        <div class="containerForm">
-            <form action="">
-                <div class="pagoForm">
-                    <label for="tarjetas">Tarjetas</label>
-                    <input type="checkbox" name="" id="tarjetas">
-                    <img src="./assets/Imagenes/visa.png">
-                    <p class="mensajeError"></p>
-                </div>
-                <div class="pagoForm">
-                    <label for="mp">Mercado Pago</label>
-                    <input type="checkbox" name="" id="mp">
-                    <img src="./assets/Imagenes/mercadoPago.png">
-                    <p class="mensajeError"></p>
-                </div>
-                <div class="pagoForm">
-                    <label for="efectivo">Efectivo</label>
-                    <input type="checkbox" name="" id="efectivo">
-                    <img src="./assets/Imagenes/efectivo.png">
-                    <p class="mensajeError"></p>
-                </div>
-                <div class="btnFinalizarCompra" >
-                    <input type="submit" value="Finalizar Compra">
-                </div>
-            </form>
+        <!--grupo 2: email-->
+        <div class="formulario__grupo" id="grupo__correo">
+            <label for="correo" class="formulario__label">E-mail</label>
+            <div class="formulario__grupo-input">
+                <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+                <ion-icon name="close-circle-outline" class="formulario__validacion-estado"></ion-icon>
+            </div>
+            <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+        </div>
+        <!--grupo 3: telefono-->
+        <div class="formulario__grupo" id="grupo__telefono">
+            <label for="telefono" class="formulario__label">Teléfono</label>
+            <div class="formulario__grupo-input">
+                <input type="number" class="formulario__input" name="telefono" id="telefono" placeholder="11529865857">
+                <ion-icon name="close-circle-outline" class="formulario__validacion-estado"></ion-icon>
+            </div>
+            <p class="formulario__input-error">El teléfono solo puede contener numeros. Máximo 10 dígitos.</p>
+        </div>
+        <h2>Datos de Entrega</h2>
+        <!--grupo 4: localidad-->
+        <div class="formulario__grupo" id="grupo__localidad">
+            <label for="localidad" class="formulario__label">Localidad de residencia</label>
+            <div class="formulario__grupo-input">
+                <input type="text" class="formulario__input" name="localidad" id="localidad" placeholder="San justo">
+                <ion-icon name="close-circle-outline" class="formulario__validacion-estado"></ion-icon>
+            </div>
+            <p class="formulario__input-error">La localidad tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+        </div>
+        <!--grupo 5: direccion-->
+        <div class="formulario__grupo" id="grupo__direccion">
+            <label for="direccion" class="formulario__label">Direccion </label>
+            <div class="formulario__grupo-input">
+                <input type="text" class="formulario__input" name="direccion" id="direccion" placeholder="Almafuerte 2015">
+                <ion-icon name="close-circle-outline" class="formulario__validacion-estado"></ion-icon>
+            </div>
+            <p class="formulario__input-error"> La direccion tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+        </div>
+        <!--grupo 6: opciones de envio-->
+        <div class="formulario__grupo formulario__grupo-checkbox" id="grupo__envio">
+            <label class="formulario__label formulario__label-checkboxs">
+                <input class="formulario__checkbox" type="checkbox" name="envio" id="envio">
+                Motomensajería
+                <img src="./assets/Imagenes/moto.png" alt="repartidor en moto">
+                
+            </label>
+            <label class="formulario__label formulario__label-checkboxs">
+                <input class="formulario__checkbox" type="checkbox" name="envio" id="envio">
+                Retiro en sucursal
+                <img src="./assets/Imagenes/ubicacion.png" alt="repartidor en moto">
+                
+            </label>
+        </div>
+        <h2>Pago</h2>
+        <!--grupo 7: Métodos de pago-->
+        <div class="formulario__grupo formulario__grupo-checkbox" id="grupo__pago">
+            <label class="formulario__label formulario__label-checkboxs">
+                <input class="formulario__checkbox" type="checkbox" name="pago" id="pago">
+                Mercado Pago
+                <img src="./assets/Imagenes/mercadoPago.png" alt="logo mercado pago">
+                
+            </label>
+            <label class="formulario__label formulario__label-checkboxs">
+                <input class="formulario__checkbox" type="checkbox" name="pago" id="pago">
+                Tarjeta
+                <img src="./assets/Imagenes/visa.png" alt="Tarjeta">
+                
+            </label>
+            <label class="formulario__label formulario__label-checkboxs">
+                <input class="formulario__checkbox" type="checkbox" name="pago" id="pago">
+                Efectivo
+                <img src="./assets/Imagenes/efectivo.png" alt="imagen de dinero">
+                
+            </label>
+        </div>
+        <!--Mensaje de error al enviar formulario-->
+        <div class="formulario__mensaje" id="formulario__mensaje">
+            <p><ion-icon name="warning" class="formulario__mensaje-error"></ion-icon> <b>Error:</b> Por favor rellena el formulario correctamente.</p>
+        </div>
+        <!--boton para enviar el formulario-->
+        <div class="formulario__grupo">
+            <button type="submit" class="formulario__btn">Enviar</button>
         </div>
 
+    </form>
+
+<!--script src="./productos.js"></script-->
 <script src="./formCompra.js"></script>
-<script src="./productos.js"></script>
-
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

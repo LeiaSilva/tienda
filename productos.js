@@ -1,4 +1,4 @@
-
+document.addEventListener("DOMContentLoaded", ()=>{
 const productos = [
     {
       "id": 1,
@@ -177,3 +177,4 @@ function mostrarContadorCarrito() {
     mostrarContador.style.display = 'block';
   }
 }
+})
