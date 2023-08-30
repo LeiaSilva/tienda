@@ -3,33 +3,35 @@ const inputs = document.querySelectorAll("#formulario input");
 
 
 const expresiones = {
-	dirreccion: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+	direccion: /^[a-zA-Z0-9áéíóúÁÉÍÓÚ\s]+$/, // letras, numeros, acentos y espacios
 	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
 }
+const campos = {
+    nombreApellido : false ,
+    correo: false ,
+    telefono: false ,
+    localidad: false ,
+    direccion : false ,
+}
+
 const validarFormulario = (e) => {
     switch (e.target.name){
         case "nombre":
-            validarCampo(expresiones.nombre , e.target, "nombreApellido")
+            validarCampo(expresiones.nombre , e.target, "nombreApellido");
         break;
         case "correo":
-        console.log("funciona")
+            validarCampo(expresiones.correo , e.target , "correo");
         break;
         case "telefono":
-        console.log("funciona")
+            validarCampo(expresiones.telefono , e.target , "telefono");
         break;
         case "localidad":
-        console.log("funciona")
+            validarCampo(expresiones.nombre , e.target , "localidad");
         break;
         case "direccion":
-        console.log("funciona")
-        break;
-        case "envio":
-        console.log("funciona")
-        break;
-        case "pago":
-        console.log("funciona")
+            validarCampo(expresiones.direccion , e.target, "direccion");
         break;
     }
 }
@@ -38,13 +40,15 @@ const validarCampo = (expresion, input , campo) =>{
     if(expresion.test(input.value)){
         document.getElementById(`grupo__${campo}`).classList.remove("formulario__grupo-incorrecto");
         document.getElementById(`grupo__${campo}`).classList.add("formulario__grupo-correcto");
-        document.querySelector("#grupo__nombreApellido ion-icon").setAttribute("name", "checkmark-circle-outline");
-        document.querySelector("#grupo__nombreApellido .formulario__input-error").classList.remove("formulario__input-error-activo");
+        document.querySelector(`#grupo__${campo} ion-icon`).setAttribute("name", "checkmark-circle-outline");
+        document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove("formulario__input-error-activo");
+        campos[campo] = true ; 
        
     }else{
         document.getElementById(`grupo__${campo}`).classList.add("formulario__grupo-incorrecto");
-         document.querySelector("#grupo__nombreApellido ion-icon").setAttribute("name", "close-circle-outline");
-        document.querySelector("#grupo__nombreApellido .formulario__input-error").classList.add("formulario__input-error-activo");
+         document.querySelector(`#grupo__${campo} ion-icon`).setAttribute("name", "close-circle-outline");
+        document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add("formulario__input-error-activo");
+        campos[campo] = false ; 
     }
 }
 
@@ -58,11 +62,21 @@ inputs.forEach((input)=> {
 
 
 
-
-
-
-
 formulario.addEventListener("submit", (e)=>{
     e.preventDefault();
 
+    const envio = document.getElementById("envio");
+    const pago = document.getElementById("pago");
+
+
+    if(campos.nombreApellido && campos.correo && campos.telefono && campos.localidad && campos.direccion && envio.checked && pago.checked ){
+        formulario.reset();
+        Swal.fire({
+            icon: 'success',
+            title: 'Éxito',
+            text: 'Proceso realizado correctamente.',
+        });
+    }else{
+        document.getElementById("formulario__mensaje").classList.add("formulario__mensaje-activo")
+    }
 })
