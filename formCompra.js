@@ -1,3 +1,5 @@
+const { default: Swal } = require("sweetalert2");
+
 const formulario = document.getElementById("formulario");
 const inputs = document.querySelectorAll("#formulario input");
 
@@ -71,11 +73,7 @@ formulario.addEventListener("submit", (e)=>{
 
     if(campos.nombreApellido && campos.correo && campos.telefono && campos.localidad && campos.direccion && envio.checked && pago.checked ){
         formulario.reset();
-        Swal.fire({
-            icon: 'success',
-            title: 'Éxito',
-            text: 'Proceso realizado correctamente.',
-        });
+        Swal.fire("Alert", "El formulario ha sido enviado correctamente." , "success");
     }else{
         document.getElementById("formulario__mensaje").classList.add("formulario__mensaje-activo")
     }
