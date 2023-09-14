@@ -1,4 +1,4 @@
-const { default: Swal } = require("sweetalert2");
+document.addEventListener("DOMContentLoaded", () => {
 
 const formulario = document.getElementById("formulario");
 const inputs = document.querySelectorAll("#formulario input");
@@ -54,8 +54,6 @@ const validarCampo = (expresion, input , campo) =>{
     }
 }
 
-
-
 inputs.forEach((input)=> {
     input.addEventListener("keyup", validarFormulario);
     input.addEventListener("blur" , validarFormulario);
@@ -64,17 +62,32 @@ inputs.forEach((input)=> {
 
 
 
-formulario.addEventListener("submit", (e)=>{
+formulario.addEventListener("submit", async (e)=>{
     e.preventDefault();
 
     const envio = document.getElementById("envio");
     const pago = document.getElementById("pago");
+    const validarCampos = () => {
+        return new Promise((resolve) => {
+            if (campos.nombreApellido && campos.correo && campos.telefono && campos.localidad && campos.direccion ) {
+                resolve(true); //campo valido
+            } else {
+                resolve(false); //campo invalido
+            }
+        });
+    };
+    const camposValidos = await validarCampos();
+    console.log(camposValidos)
 
-
-    if(campos.nombreApellido && campos.correo && campos.telefono && campos.localidad && campos.direccion && envio.checked && pago.checked ){
+    if (camposValidos) {
+        Swal.fire(
+            '¡Éxito!',
+            'Tu formulario se ha enviado correctamente.',
+            'success'
+        );        
         formulario.reset();
-        Swal.fire("Alert", "El formulario ha sido enviado correctamente." , "success");
-    }else{
-        document.getElementById("formulario__mensaje").classList.add("formulario__mensaje-activo")
+    } else {
+        document.getElementById("formulario__mensaje").classList.add("formulario__mensaje-activo");
     }
-})
+});  
+});
