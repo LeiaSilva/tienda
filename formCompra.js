@@ -69,7 +69,7 @@ formulario.addEventListener("submit", async (e)=>{
     const pago = document.getElementById("pago");
     const validarCampos = () => {
         return new Promise((resolve) => {
-            if (campos.nombreApellido && campos.correo && campos.telefono && campos.localidad && campos.direccion ) {
+            if (campos.nombreApellido && campos.correo && campos.telefono && campos.localidad && campos.direccion) {
                 resolve(true); //campo valido
             } else {
                 resolve(false); //campo invalido
